@@ -31,34 +31,34 @@ def bfs(point, ind):
     else:
         return bfs(new[0], ind+1)  + bfs(new[1], ind+1)
 
-
-
 if __name__ == "__main__":
-    # data = lines('input.txt')
+
+    ## This is basically bfs
+    data = lines('input.txt')
     
-    # start = find_s(next(data))
+    start = find_s(next(data))
 
-    # stack = [start]
-    # sol = 0
-    # tot = 0
+    stack = [start]
+    sol = 0
 
-    # for line in data:
-    #     tot+=1
-    #     to_test = len(stack)
-    #     new_beams = set()
+    for line in data:
+        to_test = len(stack)
+        new_beams = set()
         
-    #     if sol<6:
-    #         print(line)
-    #     for _ in range(to_test):
-    #         coming_beam = stack.pop(0)
-    #         next = find_next(coming_beam, line)
-    #         sol += len(next) - 1
-    #         for n in next:
-    #             if n not in new_beams:
-    #                 stack.append(n)
-    #                 new_beams.add(n)
+        if sol<6:
+            print(line)
+        for _ in range(to_test):
+            coming_beam = stack.pop(0)
+            next = find_next(coming_beam, line)
+            sol += len(next) - 1
+            for n in next:
+                if n not in new_beams:
+                    stack.append(n)
+                    new_beams.add(n)
      
-    # print(sol, tot)
+    print(sol)
+
+    ## Then use bfs for the second problem
 
     data = lines('input.txt')
     
